@@ -1,7 +1,0 @@
-cd Desktop\program ana\Streamlit
-
-cd 
-
-cd 
-
-Streamlit run streamlit1.py
