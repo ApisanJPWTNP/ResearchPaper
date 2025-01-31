@@ -130,18 +130,28 @@ The **Differential Evolution (DE)** algorithm was used to optimize trading strat
 
 The trading decision is calculated using the following equation:
 
+# Trading Decision Algorithm
+
+## Decision Formula
+
+The decision is calculated using the weighted average of trading signals as follows:
+
 \[
 \text{Decision}_d = \frac{w_1 s_1 + w_2 s_2 + \dots + w_n s_n}{\sum_{i=1}^n w_i}
 \]
 
 Where:
-- \( w_n \) = Weighted value of the nth trading signal.
-- \( s_n \) = Trading signal (1 = buy, 0 = hold, -1 = sell).
 
-The decision-making process involves comparing the decision value (\( \text{Decision}_d \)) with a threshold (\( t_d \)):
-- Buy if \( \text{Decision}_d > t_d \).
-- Sell if \( \text{Decision}_d < -t_d \).
-- Hold if \( \text{Decision}_d \) is within \( (-t_d, t_d) \).
+- \( w_n \): Weighted value of the nth trading signal.
+- \( s_n \): Trading signal (1 = buy, 0 = hold, -1 = sell).
+
+## Decision-Making Process
+
+Once the decision value \( \text{Decision}_d \) is calculated, it is compared with a threshold \( t_d \) to determine the action:
+
+- **Buy** if \( \text{Decision}_d > t_d \).
+- **Sell** if \( \text{Decision}_d < -t_d \).
+- **Hold** if \( \text{Decision}_d \) is within the range \( (-t_d, t_d) \).
 
 ### 3.5 Performance Evaluation
 
